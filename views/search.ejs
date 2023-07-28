@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <nav>
+        <div class="logo">
+            <img src="/Images/i_icon.png"/>
+        </div>
+
+        <ul class="list-item">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/team">Team</a></li>
+        </ul>
+    </nav>
+
+    <div class="tables_list">
+        <label for="tables">Choose a Table</label>
+        <select id="tables" name="tableList" form="tableForm" class="dropdown">
+            <option>Course</option>
+            <option>Credit_Combination
+            <option>Department</option>
+            <option>Faculty</option>
+            <option>Inventory</option>
+            <option>Non_Teaching_Staff</option>
+            <option>Staff</option>
+            <option>Staff_Qualification</option>
+            <option>Student</option>
+            <option>Student_Contact_No</option>
+            <option>Student_SPI</option>
+            <option>Studies</option>
+            <option>Teaches</option>
+        </select>
+
+        <form method="post" action="/search" id="tableForm">
+            <input type="submit">
+        </form>
+    </div>
+
+    <% if (temp.length !== 0) { %>
+        <div class="search_form">
+            <label for="attributes">Search by : </label>
+            <select id="attributes" name="attr" form="selectionForm">
+                <% for (let i = 0; i < columns.length; i++ ) { %>
+                    <option><%= columns[i].Field %></option>
+                <% } %>
+            </select>
+            <form method="post" action='<%= "/search/table?name=" + temp + '&attr=' %>' id="selectionForm">
+                <input type="submit">
+            </form>
+
+            <% if (attribute !== '') { %>
+                <form method="post" action="<%= "/search/table?name=" + temp + '&attr=' + attribute %>"
+                      id="attrInputForm">
+                    <label for="<%= attribute %>">Enter <%= attribute %></label>
+                    <% if (attribute === 'DOB')  { %>
+                        <input type="date" name='value' id="<%= attribute %>" placeholder="<%= attribute %>">
+                    <% } else { %>
+                        <input name='value' type="text" id="<%= attribute %>" placeholder="<%= attribute %>">
+                    <% } %>
+                    <input type="submit">
+                </form>
+            <% } %>
+        </div>
+    <% } %>
+
+    <% if (message !== '') { %>
+        <div class="sortByAndOrder">
+            <div class="sortByOpt">
+                <label for="sortBy">Sort by : </label>
+                <select name="sortBy" id="sortBy" form="sortByOptions">
+                    <% for (let i = 0; i < attrs.length; i++ ) { %>
+                        <option value="<%= attrs[i].name %>"><%= attrs[i].name %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="sortByOrd">
+                <label for="sortByOrder">Order</label>
+                <select name="sortByOrder" id="sortByOrder" form="sortByOptions">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+
+        </div>
+
+        <form action="/search/sort?table=<%= name.toString().toLocaleLowerCase() %>&attr=<%= searchAttribute %>&value=<%= searchValue %>"
+              method="post" id="sortByOptions" class="sortByOptions">
+            <input type="submit">
+        </form>
+
+        <div class="tableName">
+        <h1><%= message %></h1>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <% for (let i = 0; i < attrs.length; i++) { %>
+                        <th><%= attrs[i].name %></th>
+                    <% } %>
+                </tr>
+                <% for (let i = 0; i < someData.length; i++ ) { %>
+                    <tr>
+                        <% for (let info in someData[i] ) { %>
+                            <% if (info === 'DOB') { %>
+                                <% if(someData[i][info] !== null) { %>
+                                    <td><%= someData[i][info].toDateString() %></td>
+                                <% } else { %>
+                                    <td></td>
+                                <% } %>
+                            <% } else { %>
+                                <td><%= someData[i][info] %></td>
+                            <% } %>
+                        <% } %>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    <% } %>
+
+</div>
+</body>
+</html>

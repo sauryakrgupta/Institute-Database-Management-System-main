@@ -1,0 +1,493 @@
+/*!*----------->NAVBAR<-------------*!*/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: arial, tahoma, serif;
+    list-style: none;
+}
+
+body {
+    background-image: url('/Images/b.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background-color: grey;*/
+}
+
+header {
+    background-color: #333;
+    height: 500px;
+}
+
+/*   Start navigation bar   */
+
+nav {
+    height: 80px;
+    background-color: deepskyblue;
+    border-bottom: 1px solid #555
+}
+.logo {
+    padding: 10px;
+    width: auto;
+    float: left;
+}
+.logo img {
+    height: 55px;
+}
+.list-item {
+    float: right;
+    margin-right: 25px;
+    margin-top: 17px;
+}
+.list-item li {
+    float: left;
+    padding: 13px 13px;
+    font-size: 18px;
+    border-radius: 3px;
+    transition: all .7s ease-in-out;
+}
+.list-item li a {
+    color: black;
+}
+.list-item li:hover {
+    background-color: blue;
+}
+
+.links,.links-hidden{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.links-hidden{
+    display: block;
+}
+.links{
+    display: inline-block;
+}
+.links-hidden:hover,.links:hover {
+    background-color: rgb(8, 107, 46);
+}
+.dropdown-menu:hover .menu-content {
+    display: block;
+}
+.dropdown-menu:hover .menu-btn {
+    background-color: #3e8e41;
+}
+
+/*---------------->Index.html<-----------------*/
+
+.container, .options {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+    justify-content: space-evenly;
+}
+
+.option_set_1, .option_set_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.option_set_1, .option_set_2 {
+    min-height: 300px;
+}
+
+.option_set_1 div, .option_set_2 div {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.option_set_1 * a, .option_set_2 * a {
+    background-color: skyblue;
+    color: black;
+    margin: auto;
+    border-radius: 5px;
+    padding: 25px 35px;
+    transition: all .2s ease-in-out;
+    z-index: 1;
+}
+
+.option_set_1 * a:hover , .option_set_2 * a:hover {
+    padding: 40px 60px;
+    z-index: 1024;
+    background-color: skyblue;
+    font-size: 30px;
+}
+
+
+/*-------------->See.ejs<--------------*/
+
+.tables_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1% auto;
+}
+
+.tables_list * {
+    margin: auto;
+}
+
+.tableName, .sortByOptions {
+    margin: 1% auto;
+}
+
+.sortByAndOrder {
+    display: flex;
+    flex-direction: row;
+    margin:2% auto;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.sortByOpt, .sortByOrd {
+    margin:auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.sortByOrd * , .sortByOpt * {
+    margin: auto;
+}
+
+
+/*--------------->Advance.ejs<---------------*/
+
+.input_query {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input_query * {
+    margin: 1% auto;
+}
+
+.input_query textarea {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 50ch;
+    min-height: 20ch;
+    max-height: 40ch;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.advMsg {
+    margin: auto;
+}
+
+/*--------------->search.ejs<---------------*/
+
+.search_form {
+    display: flex;
+    flex-direction: column;
+}
+.search_form * {
+    margin: 0.5% auto;
+}
+
+.search_form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.search_form #attrInputForm * {
+    margin: 1% auto;
+}
+
+.search_form form input:not(input[type="submit"]) {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+/*--------------->insert.ejs<-----------------*/
+
+.container_insert h1 {
+    margin: 1% auto;
+}
+
+/*--------------->delete.ejs<----------------*/
+
+.container_delete h1 {
+    margin: 2% auto;
+}
+
+.container_delete .insert_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_delete .insert_form * {
+    margin: auto;
+}
+.container_delete .insert_form_submit {
+    margin: 1%  auto;
+}
+
+
+/*----------------->update.ejs<----------------*/
+
+.container_update h1 {
+    margin: 1% auto;
+}
+
+.tables_list_col, .tables_list_col form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tables_list_col * {
+    margin: 0.5% auto;
+}
+
+.tables_list_col form input:not(.update_button, input[type="submit"]){
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+/*----------------->about.html<------------------*/
+
+.container_about h1 {
+    margin: 1% auto;
+}
+
+.container_about .tableInfo table tr td {
+    text-align: left;
+}
+
+.container_about .tableInfo table tr th {
+    text-align: center;
+}
+
+
+
+/*---------------->teams.html<----------------*/
+
+.section-team {
+    font-family: "Poppins", sans-serif;
+    padding: 80px 0;
+}
+
+.section-team .header-section {
+    margin-bottom: 50px;
+}
+
+.section-team .header-section .small-title {
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3e64ff;
+}
+
+.section-team .header-section .title {
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.section-team .single-person {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #f6f9ff;
+    border-radius: 5px;
+}
+
+.section-team .single-person:hover {
+    background: linear-gradient(to right, #016cec, #00b5f7);
+}
+
+.section-team .single-person .person-image {
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: 50%;
+    border: 4px dashed transparent;
+    transition: padding .3s;
+}
+
+.section-team .single-person:hover .person-image {
+    padding: 12px;
+    border: 4px dashed #fff;
+}
+
+.section-team .single-person .person-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.section-team .single-person .person-image .icon {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: linear-gradient(to right, #016cec, #00b5f7);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.section-team .single-person:hover .person-image .icon {
+    background: none;
+    background-color: #fff;
+    color: #016cec;
+}
+
+.section-team .single-person .person-info .full-name {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.section-team .single-person .person-info .speciality {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #016cec;
+}
+
+.section-team .single-person:hover .full-name,
+.section-team .single-person:hover .speciality {
+    color: #fff;
+}
+
+
+label {
+    color: black;
+    margin-bottom: 0.5%;
+    font-size: 35px;
+}
+
+select, .showBtn, .insert_form_submit , input[type="submit"]{
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.showBtn, .insert_form_submit , input[type="submit"]{
+    margin-top: 3%;
+    width: 50%;
+}
+
+.showBtn:hover, .insert_form_submit:hover , input[type="submit"]:hover, .update_attr_select:hover {
+    background: #1f91ff;
+    color: #fff;
+    border: 1px solid #eee var(--select-border);
+}
+
+table {
+    border-collapse: collapse;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: left;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 1% auto;
+}
+
+table tr td {
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+
+table tr th {
+    background-color: #046fd6;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+table tr:hover td {
+    background-color: #78bafa;
+}
+
+.insert_form {
+    /*display: inline-block;*/
+    display: flex;
+    justify-content: center;
+}
+
+.insertForm input:not(.insert_form_submit)  {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.insertForm select {
+    width: 100%;
+}
+
+.insert_btn, .advance_submit, input[type="submit"] {
+    display: flex;
+    justify-content: center;
+}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container container_update">
+
+    <nav>
+        <div class="logo">
+            <img src="/Images/i_icon.png"/>
+        </div>
+
+        <ul class="list-item">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/team">Team</a></li>
+        </ul>
+    </nav>
+
+    <div class="tables_list">
+        <label for="tables">Choose a table :</label>
+        <select id="tables" name="tableList" form="tableForm">
+            <option>Course</option>
+            <option>Credit_Combination
+            <option>Department</option>
+            <option>Faculty</option>
+            <option>Inventory</option>
+            <option>Non_Teaching_Staff</option>
+            <option>Staff</option>
+            <option>Staff_Qualification</option>
+            <option>Student</option>
+            <option>Student_Contact_No</option>
+            <option>Student_SPI</option>
+            <option>Studies</option>
+            <option>Teaches</option>
+        </select>
+        <form method="post" action="/update" id="tableForm">
+            <input type="submit">
+        </form>
+    </div>
+
+    <% if (temp.length !== 0) { %>
+
+    <% if (columns.length !== 0 ) { %>
+        <div class="tables_list_col">
+            <label for="tables_col">What to update?</label>
+            <select id="tables_col"  name="attr" form="tableFormCol">
+                <% for (let i = 0; i < columns.length; i ++){ %>
+                    <option><%= columns[i].name %></option>
+                <% } %>
+            </select>
+            <form method="post" action='<%= '/update/table?name=' + temp + '&attr='%>' id="tableFormCol">
+                <input type="submit">
+            </form>
+        <% } else { %>
+                <h1 style="margin: 1% auto;">No non-primary key to update</h3>
+            <% } %>
+
+            <% if (attribute !== '') { %>
+                <form method="post" action='<%= '/update/table?name=' + temp + '&attr=' + attribute %>' id="tableFormCol2">
+
+                <label for="<%= attribute%>">Update <%= attribute %> to </label>
+                <% if (attribute === 'DOB')  { %>
+                    <input type="date"  name='value' id="<%= attribute%>" placeholder="<%= attribute%>">
+                <% } else { %>
+                    <input type="text" name='value' id="<%= attribute%>" placeholder="<%= attribute%>">
+                <% } %>
+
+                <% for (let i = 0; i < column.length; i ++){ %>
+                    <label for="<%= column[i].name%>"> of </label>
+                    <input placeholder="<%= column[i].name%>" name="<%= column[i].name%>" id="<%= column[i].name%>" required>
+                <% } %>
+                <input type="submit" value="Update" class="update_button">
+                </form>
+            <%}%>
+        </div>
+    <% } %>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advance</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+
+    <nav>
+        <div class="logo">
+            <img src="/Images/i_icon.png" />
+        </div>
+
+        <ul class="list-item">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/team">Team</a></li>
+        </ul>
+    </nav>
+
+    <div class="input_query">
+        <label for="sqlQ">Type SQL Query Below</label>
+        <textarea form="tableForm_advance" name="sqlQuery" id="sqlQ" cols="100" rows="10" class="sqlQ"></textarea>
+        <form method="get" action="/advance/sql" id="tableForm_advance" class="tableform_advance">
+            <div class="advance_submit">
+                <input type="submit" id="showBtn" class="showBtn">
+            </div>
+        </form>
+    </div>
+
+    <div class="advMsg">
+        <h1><%= message%></h1>
+    </div>
+    <table>
+        <tr>
+            <% for (let i = 0; i < columns.length; i ++) { %>
+                <th><%= columns[i].name %></th>
+            <% } %>
+        </tr>
+        <% for (let i = 0; i < someData.length; i ++ ) { %>
+            <tr>
+                <% for (let info in someData[i] ) { %>
+                    <% if (info === 'DOB') { %>
+                        <% if(someData[i][info] !== null) { %>
+                            <td><%= someData[i][info].toDateString()%></td>
+                        <% } else { %>
+                            <td></td>
+                        <% } %>
+                    <% } else { %>
+                        <td><%= someData[i][info]%></td>
+                    <% } %>
+                <% } %>
+            </tr>
+        <% } %>
+    </table>
+
+</div>
+
+<script type="text/javascript">
+    const hljs = require('highlight.js/lib/core');
+    hljs.registerLanguage('sql', require('highlight.js/lib/languages/sql'));
+
+    const highlightedCode = hljs.highlight(document.getElementById('sqlQ'), {language: 'sql'}).value
+</script>
+</body>
+</html>

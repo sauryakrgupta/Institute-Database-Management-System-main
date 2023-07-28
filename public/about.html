@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container container_about">
+    <nav>
+        <div class="logo">
+            <img src="/Images/i_icon.png" />
+        </div>
+        <ul class="list-item">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/team">Team</a></li>
+        </ul>
+    </nav>
+
+    <h1>About Tables</h1>
+    <div class="tableInfo">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Attribute<br> Name</th>
+                <th>Attribute<br> Type</th>
+                <th>Attribute<br> Description</th>
+                <th>Normalized<br> form</th>
+            </tr>
+            <tr>
+                <td>Course</td>
+                <td>Stores the information about courses</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Course_Code (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                        </tr>
+                        <tr>
+                            <td>Semester</td>
+                        </tr>
+                        <tr>
+                            <td>Dno (FK)</td>
+                        </tr>
+                        <tr>
+                            <td>Lecture (FK)</td>
+                        </tr>
+                        <tr>
+                            <td>Tutorial (FK)</td>
+                        </tr>
+                        <tr>
+                            <td>Practical (FK)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(5)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(20)</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Code of the course</td>
+                        </tr>
+                        <tr>
+                            <td>Name of the course</td>
+                        </tr>
+                        <tr>
+                            <td>Semester in which course is taught</td>
+                        </tr>
+                        <tr>
+                            <td>Number of the Department in which course is taught</td>
+                        </tr>
+                        <tr>
+                            <td>Lecture hours of course in a week</td>
+                        </tr>
+                        <tr>
+                            <td>Tutorial hours of course in a week</td>
+                        </tr>
+                        <tr>
+                            <td>Practical hours of course in a week</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Credit_Combination</td>
+                <td>Stores the combination of lecture, tutorial <br> and practical to form credit </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Lecture (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>Tutorial (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>Practical (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>Credit</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Lecture hours</td>
+                        </tr>
+                        <tr>
+                            <td>Tutorial hours</td>
+                        </tr>
+                        <tr>
+                            <td>Practical hours</td>
+                        </tr>
+                        <tr>
+                            <td>Credit</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td>Stores the information about departments</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Dnumber (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                        </tr>
+                        <tr>
+                            <td>HOD (FK)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(20)</td>
+                        </tr>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Number of the department</td>
+                        </tr>
+                        <tr>
+                            <td>Name of the department</td>
+                        </tr>
+                        <tr>
+                            <td>Head of the department (From staff)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Faculty</td>
+                <td>Stores the information about faculty</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Faculty_Id (PK)(FK)</td>
+                        </tr>
+                        <tr>
+                            <td>F_Rank</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(16)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Staff ID of the faculty</td>
+                        </tr>
+                        <tr>
+                            <td>Rank of the faculty</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Inventory</td>
+                <td>Stores the information of the items purchased</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Item_Id (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>IName</td>
+                        </tr>
+                        <tr>
+                            <td>Quantity</td>
+                        </tr>
+                        <tr>
+                            <td>Purchase_date</td>
+                        </tr>
+                        <tr>
+                            <td>Manufacturer</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(10)</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>date</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(20)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>ID of the item</td>
+                        </tr>
+                        <tr>
+                            <td>Name of the item</td>
+                        </tr>
+                        <tr>
+                            <td>Quantity of the item</td>
+                        </tr>
+                        <tr>
+                            <td>Purchase date of the items</td>
+                        </tr>
+                        <tr>
+                            <td>Manufacturer of the items</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Non_Teaching_Staff</td>
+                <td>Stores the information of the non-teaching-staff</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>NTS_Id (PK)(FK)</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                        </tr>
+                        <tr>
+                            <td>Employment_Status</td>
+                        </tr>
+                        <tr>
+                            <td>Specialization</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(10)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(10)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(10)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Staff ID of the non-teaching-staff</td>
+                        </tr>
+                        <tr>
+                            <td>Post of the non-teaching-staff</td>
+                        </tr>
+                        <tr>
+                            <td>Employment status of the non-teaching-staff (Full/Part-time)</td>
+                        </tr>
+                        <tr>
+                            <td>Field of specialization of the non-teaching-staff</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Staff</td>
+                <td>Stores the information of the staffs</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Staff_Id (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>Fname</td>
+                        </tr>
+                        <tr>
+                            <td>Mname</td>
+                        </tr>
+                        <tr>
+                            <td>Lname</td>
+                        </tr>
+                        <tr>
+                            <td>Sex</td>
+                        </tr>
+                        <tr>
+                            <td>DOB</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                        </tr>
+                        <tr>
+                            <td>Experience</td>
+                        </tr>
+                        <tr>
+                            <td>Salary</td>
+                        </tr>
+                        <tr>
+                            <td>Contact_No</td>
+                        </tr>
+                        <tr>
+                            <td>Mail</td>
+                        </tr>
+                        <tr>
+                            <td>Dno (FK)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(10)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(15)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(15)</td>
+                        </tr>
+                        <tr>
+                            <td>char(1)</td>
+                        </tr>
+                        <tr>
+                            <td>date</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(30)</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>decimal(6, 2)</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(30)</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>ID of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>First name of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Middle name of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Last name of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Gender of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Date of birth of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Address of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Experience of the staff (in years)</td>
+                        </tr>
+                        <tr>
+                            <td>Salary of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Contact Number of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Mail ID of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Number of the department in which staff works</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Staff_qualification</td>
+                <td>Stores the information about the qualifications of the staffs</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Staff_Id (PK)(FK)</td>
+                        </tr>
+                        <tr>
+                            <td>Qualification (PK)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(10)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>ID of the staff</td>
+                        </tr>
+                        <tr>
+                            <td>Qualification of the staff</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Student</td>
+                <td>Stores the information of the Students</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Student_Id (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>Fname</td>
+                        </tr>
+                        <tr>
+                            <td>Mname</td>
+                        </tr>
+                        <tr>
+                            <td>Lname</td>
+                        </tr>
+                        <tr>
+                            <td>Sex</td>
+                        </tr>
+                        <tr>
+                            <td>DOB</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                        </tr>
+                        <tr>
+                            <td>Program</td>
+                        </tr>
+                        <tr>
+                            <td>CPI</td>
+                        </tr>
+                        <tr>
+                            <td>Batch</td>
+                        </tr>
+                        <tr>
+                            <td>Mail</td>
+                        </tr>
+                        <tr>
+                            <td>Dno (FK)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(15)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(15)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(15)</td>
+                        </tr>
+                        <tr>
+                            <td>char(1)</td>
+                        </tr>
+                        <tr>
+                            <td>date</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(30)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(10)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(20)</td>
+                        </tr>
+                        <tr>
+                            <td>decimal(4, 2)</td>
+                        </tr>
+                        <tr>
+                            <td>char(4)</td>
+                        </tr>
+                        <tr>
+                            <td>varchar(33)</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>ID of the student</td>
+                        </tr>
+                        <tr>
+                            <td>First name of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Middle name of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Last name of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Gender of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Date of birth of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Address of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Category of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Program in which student is studying</td>
+                        </tr>
+                        <tr>
+                            <td>CPI of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Batch of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Mail ID of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Number of the department in which student studies</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Student_Contact_No</td>
+                <td>Stores the information of student's contact numbers</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Student_Id (PK) (FK)</td>
+                        </tr>
+                        <tr>
+                            <td>Contact_No (PK)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>char(10)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>ID of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Contact Number of the student</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Student_Spi</td>
+                <td>Stores the information of the student's SPI in the semesters</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Student_ID (PK) (FK)</td>
+                        </tr>
+                        <tr>
+                            <td>Semester (PK)</td>
+                        </tr>
+                        <tr>
+                            <td>SPI</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>decimal(4, 2)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>ID of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Semester in which student has got some SPI</td>
+                        </tr>
+                        <tr>
+                            <td>SPI of the student in a semester</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Studies</td>
+                <td>Stores the information of the courses a student is studying</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Sid (PK) (FK)</td>
+                        </tr>
+                        <tr>
+                            <td>CCode (PK) (FK)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>ID of the student</td>
+                        </tr>
+                        <tr>
+                            <td>Code of the course student is studying</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+            <tr>
+                <td>Teaches</td>
+                <td>Stores the information of courses taught by a faculty</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>F_Id (PK) (FK)</td>
+                        </tr>
+                        <tr>
+                            <td>C_code (PK) (FK)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>char(9)</td>
+                        </tr>
+                        <tr>
+                            <td>char(5)</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>ID of the faculty</td>
+                        </tr>
+                        <tr>
+                            <td>Code of the course taught by faculty</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>3NF</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
